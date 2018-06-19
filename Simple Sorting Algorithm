@@ -1,0 +1,63 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace SortingAlgortihms
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int other_number = 0;
+
+            int[] unsorted = { 1, 10, 5, 6, 7, 3, 4, 7, 99, 23, 44, 67 };
+            for (int index = 1; index < unsorted.Length; ++index)
+            {
+
+                for (int count = 0; count < unsorted.Length; ++count)
+                {
+                    if (unsorted[count] > unsorted[index])
+                    {
+                        other_number = unsorted[index];
+                        unsorted[index] = unsorted[count];
+                        unsorted[count] = other_number;
+
+                    }
+
+                }
+            }
+            Console.Write("Lowest to Highest: ");
+            for (int index = 0; index < unsorted.Length; ++index)
+            {
+                {
+                    Console.Write(unsorted[index] + " ");
+                }
+            }
+            Console.WriteLine();
+            for (int index = 1; index < unsorted.Length; ++index)
+            {
+
+                for (int count = 0; count < unsorted.Length; ++count)
+                {
+                    if (unsorted[count] < unsorted[index])
+                    {
+                        other_number = unsorted[index];
+                        unsorted[index] = unsorted[count];
+                        unsorted[count] = other_number;
+
+                    }
+
+                }
+            }
+            Console.Write("Highest to Lowest ");
+            for (int index = 0; index < unsorted.Length; ++index)
+            {
+                Console.Write(unsorted[index] + " ");
+            }
+            Console.ReadLine();
+
+        }
+    }
+}
